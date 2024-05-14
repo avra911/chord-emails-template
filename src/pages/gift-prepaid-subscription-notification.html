@@ -1,0 +1,106 @@
+---
+gift_pre_paid_subscription:
+  redemption_code: ABCD1234
+  redemption_url: localhost:3000/redeem/ABCD1234
+  gift_note: 'This is a gift from a friend. Enjoy!'
+---
+
+<wrapper class="header">
+  <row>
+    <columns>
+      <spacer size="26"></spacer>
+      <center>
+        <img
+          class="logo"
+          src="http://cdn.mcauto-images-production.sendgrid.net/11c240357b503463/ce908add-ba8e-4d5b-a89c-a7d3554b6116/382x85.png"
+          alt="Mystery Tackle Box"
+        />
+      </center>
+      <spacer size="8"></spacer>
+    </columns>
+  </row>
+</wrapper>
+
+<container class="main">
+  <row>
+    <columns>
+      <spacer size="35"></spacer>
+      <h3 class="text-center">You recieved a gift subscription!</h3>
+      <h3 class="text-center">
+        Redemption Code:&nbsp;{{ gift_pre_paid_subscription.redemption_code }}
+      </h3>
+      <hr class="separator" />
+    </columns>
+  </row>
+
+  <row>
+    <columns>
+      {{#gift_pre_paid_subscription.gift_note}}
+      <p class="text-center">
+        Note from sender:
+        <span style="font-style: italic"
+          >{{gift_pre_paid_subscription.gift_note}}</span
+        >
+      </p>
+      <spacer size="16"></spacer>
+      {{/gift_pre_paid_subscription.gift_note}}
+
+      <p class="text-center subtitle">
+        To activate this subscription, you must enter your redemption code and
+        email address at the below link. You will then be prompted to input your
+        shipping address.
+      </p>
+      <spacer size="16"></spacer>
+      <h2 class="text-center">
+        <a
+          href="{{ gift_pre_paid_subscription.redemption_url }}"
+          target="_blank"
+          style="text-decoration: underline"
+          >Click here to redeem your gift</a
+        >
+      </h2>
+      <spacer size="35"></spacer>
+    </columns>
+  </row>
+</container>
+
+<wrapper class="footer">
+  <row>
+    <columns>
+      <spacer size="32"></spacer>
+      <p class="text-center">
+        <strong>Get Free Tackle.</strong> Give $10 off. Get $10 off.
+      </p>
+      <p class="text-center">
+        <a
+          href="https://shopkarls.com/refer-a-friend?utm_medium=email&amp;utm_source=tackletracker"
+          >Learn more</a
+        >
+      </p>
+    </columns>
+  </row>
+  <row>
+    <columns>
+      <a
+        href="https://mysterytacklebox.com/?utm_medium=email&amp;utm_source=tackletracker"
+      >
+        <img
+          src="http://cdn.mcauto-images-production.sendgrid.net/11c240357b503463/b495f26b-2a0b-4f49-8926-c7a63b96d7e8/76x85.png"
+          alt="Mystery Tackle Box"
+          width="36"
+        />
+      </a>
+    </columns>
+  </row>
+  <row>
+    <columns>
+      <p class="text-center">
+        <small
+          >Mystery Tackle Box, 20 N Upper Wacker Dr., Suite 1200, Chicago, IL
+          60606</small
+        >
+      </p>
+      <spacer size="64"></spacer>
+    </columns>
+  </row>
+</wrapper>
